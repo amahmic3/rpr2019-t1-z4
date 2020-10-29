@@ -20,12 +20,13 @@ public class Korpa {
     public Artikl izbaciArtiklSaKodom(String kod) {
         Artikl povratni=null;
         for(int i=0;i<brArtikala;i++){
-            if(korpica[i]!=null && korpica[i].getNaziv().equals(kod)){
+            if(korpica[i]!=null && korpica[i].getKod().equals(kod)){
                 povratni = korpica[i];
                 korpica[i]=null;
                 for(int j=i;j<brArtikala-1;j++){
-                    korpica[i]=korpica[i+1];
+                    korpica[j]=korpica[j+1];
                 }
+                korpica[brArtikala-1]=null;
                 brArtikala=brArtikala-1;
             }
         }
@@ -35,6 +36,7 @@ public class Korpa {
     public int dajUkupnuCijenuArtikala() {
         int suma=0;
         for(Artikl a:korpica){
+            if(a!=null)
             suma=suma+a.getCijena();
         }
         return suma;

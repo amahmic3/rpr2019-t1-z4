@@ -17,15 +17,15 @@ public class Supermarket {
     public Artikl izbaciArtiklSaKodom(String kod) {
         Artikl povratni=null;
         for(int i=0;i<brArtikala;i++){
-            if(inventar[i]!=null && inventar[i].getNaziv().equals(kod)){
+
+            if(inventar[i]!=null && inventar[i].getKod().equals(kod)){
                 povratni = inventar[i];
                 inventar[i]=null;
-                for(int j=i;j<brArtikala-1;j++){
-                    inventar[i]=inventar[i+1];
+                for(int j=i;j<brArtikala-1;j++) {
+                    inventar[j] = inventar[j + 1];
                 }
+                inventar[brArtikala-1]=null;
                 brArtikala=brArtikala-1;
-
-
             }
         }
         return  povratni;
