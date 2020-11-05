@@ -41,4 +41,7 @@ public class Korpa {
         }
         return suma;
     }
+    public int getBrArtikala(){
+        return  brArtikala;
+    }
 }

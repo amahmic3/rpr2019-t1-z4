@@ -30,4 +30,8 @@ public class Supermarket {
         }
         return  povratni;
     }
+
+    public int getBrArtikala() {
+        return brArtikala;
+    }
 }
